@@ -1,0 +1,129 @@
+package com.decroly.daw;
+
+import java.util.Scanner;
+
+public class Practica_1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println("Buenos días");
+		
+		
+		System.out.println("EJERCICIO 2");
+		
+		
+		
+		System.out.println("Valor de cada lado del cuadrado: 5");
+		int l1 = (int) 5;
+		int l2= (int) 5;
+		int l3= l1*l2;
+		
+		
+		System.out.print("Aréa del cuadrado: ");
+		System.out.println(l3);
+		
+		System.out.println("EJERCICIO 3");
+	
+		// Punto 2
+		
+		Scanner reader = new Scanner(System.in);
+		
+		System.out.println("Introduce el lado del cuadrado: ");
+		char C = 'S'; 
+		
+		int vlc = reader.nextInt();
+	
+
+		
+		System.out.println("El valor del aréa es: "+(vlc*2));
+		
+		
+		System.out.println("EJERCICIO 4");
+		
+		// Punto 3 
+		
+		
+		reader = new Scanner(System.in);
+		
+		System.out.println("Suma: ");
+		
+		System.out.println("Numero 1: ");
+		int sumar1 = reader.nextInt();
+		
+		System.out.println("Numero 2 ");
+		int sumar2 = reader.nextInt();
+		
+		int resul1 = sumar1 +sumar2; 
+		
+		System.out.println("Resultado:" + (resul1));
+		
+	
+		
+		System.out.println("Resta: ");
+		
+		System.out.println("Número 1: ");
+		int restar1 = reader.nextInt();
+
+		System.out.println("Número 2: ");
+		int restar2 = reader.nextInt();
+		
+		
+		int resul2 = restar1 - restar2; 
+		
+		System.out.println("Resultado: " + (resul2));
+		
+		
+		
+		System.out.println("Multiplicar: ");
+		
+		System.out.println("Número 1: ");
+		int mul1 = reader.nextInt();
+		
+		System.out.println("Número 2: ");
+		int mul2 = reader.nextInt();
+		
+		int resul3 = mul1 * mul2; 
+		
+		System.out.println("Resultado: " + (resul3));
+		
+		
+		
+		System.out.println("División: ");
+		
+		System.out.println("Número 1: ");
+		int divir1 = reader.nextInt();
+		
+		System.out.println("Número 2: ");
+		int divir2 = reader.nextInt();
+		
+		int resul4 = divir1 / divir2; 
+		
+		System.out.println("Resultado: " + (resul4));
+		
+		
+		
+		// Punto 4
+		
+		
+		
+		System.out.println("Escriba el valor correspondente a la longitud de una radio");
+		int lonR = reader.nextInt();
+		
+		System.out.println("Operación:");
+		
+		System.out.println("C = 2 *"+ lonR);
+		
+		int circ = lonR*2;
+		
+		System.out.println("Resultado:" +(circ* 3.14));
+		
+		
+		// Punto 5
+		
+		
+		
+		
+	}
+
+}

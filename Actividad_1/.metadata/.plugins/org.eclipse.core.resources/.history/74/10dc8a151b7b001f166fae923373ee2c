@@ -1,0 +1,31 @@
+package com.decroly.daw;
+
+import java.util.Scanner;
+
+public class Practica_2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner reader = new Scanner(System.in);
+		
+
+		int edad; 
+		System.out.println("Escriba su edad: ");
+
+		
+		edad = reader.nextInt(); 
+		
+		if (edad < 18) {
+			
+			System.out.println("Menor de edad");
+			
+		} else if (edad > 18) {
+			
+			System.out.println("Eres mayor de edad");
+		}
+		
+	}
+	
+
+}

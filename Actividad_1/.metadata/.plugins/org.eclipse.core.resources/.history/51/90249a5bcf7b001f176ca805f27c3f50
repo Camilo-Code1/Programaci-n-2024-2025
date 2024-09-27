@@ -1,0 +1,85 @@
+package com.decroly.daw;
+
+import java.util.Scanner;
+
+public class Practica_2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		// PUNTO 1
+
+		Scanner sc = new Scanner(System.in);
+		
+
+		int edadd; 
+		System.out.println("Escriba su edad: ");
+
+		
+		edadd = sc.nextInt(); 
+		
+		if (edadd > 18) {
+			
+			System.out.println("Eres mayor de edad");
+			
+		}
+		
+		
+		
+		// PUNTO 2
+		
+		sc = new Scanner(System.in);
+		
+
+		int edad; 
+		System.out.println("Escriba su edad: ");
+
+		
+		edad = sc.nextInt(); 
+		
+		if (edad < 18) {
+			
+			System.out.println("Menor de edad");
+			
+		} else if (edad > 18) {
+			
+			System.out.println("Eres mayor de edad");
+		}
+		
+		
+		// PUNTO 3
+		
+			System.out.println("Numeros del 1 al 20: ");
+			int numero;
+			
+			for(numero=1;numero<=20;numero++)
+				
+				System.out.print(numero + " ");
+			
+			System.out.println("\n");
+		
+		
+		// PUNTO 4
+		
+			System.out.println("Numeros del 1 al 200: ");
+			
+			int num, pares;
+			pares = 0;
+			
+			for(num=1;num<=201;num++);
+			
+			System.out.print(num + " ");
+			
+			System.out.println("\n");
+				
+				if(num %2 == 0)
+					pares = pares + num;
+			
+			
+			System.out.println("Numeros del 1 al 200 y sus pares sumados: "+ pares);
+			
+	} // MAIN
+	
+
+} // CLASE
