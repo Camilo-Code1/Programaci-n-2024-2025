@@ -10,6 +10,8 @@ public class Practica_2 {
 		
 		// PUNTO 1
 
+		System.out.println("EJERCICIO 1");
+		
 		Scanner sc = new Scanner(System.in);
 		
 
@@ -28,6 +30,8 @@ public class Practica_2 {
 		
 		
 		// PUNTO 2
+		
+		System.out.println("EJERCICIO 2");
 		
 		sc = new Scanner(System.in);
 		
@@ -50,6 +54,8 @@ public class Practica_2 {
 		
 		// PUNTO 3
 		
+		System.out.println("EJERCICIO 3");
+		
 			System.out.println("Numeros del 1 al 20: ");
 			int numero;
 			
@@ -61,34 +67,147 @@ public class Practica_2 {
 		
 		
 		// PUNTO 4
-		
-			System.out.println("Numeros del 1 al 200: ");
 			
-			int num;
-			
-			
-			for(num=0;num<=199;num++); {
+			System.out.println("EJERCICIO 4");
 			
 
 			
-				
-				if(num %2 == 0) {
-					
+			for (int contador = 2; contador <= 200; contador +=2) {
+			  
+			    System.out.println(contador);
+		
+		
 			
+			}
 			
-			System.out.println("Numeros del 1 al 200 y sus pares sumados: "+ num);
-			
-			
+		
 			
 		// PUNTO 5
+			
+			System.out.println("EJERCICIO 5");
+			
+			
+			
+			
+			
+			
+		// PUNTO 6 
+			
+			System.out.println("EJERCICIO 6");
+			
+			
+			int n;
+			int i; 
+			System.out.println("Inserte el número hasta que el desea contar: ");
+			
+			n = sc.nextInt(); 
+			
+			
+			System.out.println("Números del 1 al " + n + ": ");
+			for (i = 1; i <= n; i++)
+			
+				System.out.println(i);
+			
+			
+			
+		// PUNTO 7
+		
+		
+			
+			System.out.println("EJERCICIO 7");
+			
+			int nota;	
+			
+			System.out.println("Dame un número entre 0 y 10: ");
+			
+			nota = sc.nextInt();
+			
+		
+			if (nota< 5) {
+					System.out.println("Insuficiente");
+			} else if (nota < 6) {
+					System.out.println("Suficiente");
+			} else if (nota < 7) {
+					System.out.println("Bien");
+			} else if (nota < 9) {
+					System.out.println("Notable");
+			} else {
+					System.out.println("Sobresaliente");
+			}
+			
+			
+		// PUNTO 8
+			
+			System.out.println("EJERCICIO 8");	
+			
+			
+			
+			
+		
+			
+		// PUNTO 9
+			
+			System.out.println("EJERCICIO 9");	
 			
 		
 			
 			
+			
+		// PUNTO 10
+			
+			System.out.println("EJERCICIO 10");
+			
+			
+			
+			
+			
+			
+			
+		// PUNTO 11
+			
+			System.out.println("EJERCICIO 11");
+			
+		
+			
+	
+			
+			
+			
+			
+		// PUNTO 12
+			
+			System.out.println("EJERCICIO 12");
+			
+			
+			
+			
+			
+			
+			
+		
+		// PUNTO 13	
+			
+			System.out.println("EJERCICIO 13");
+			
+			
+			
+			
+			
+			
+		// PUNTO 14	
+			
+			System.out.println("EJERCICIO 14");
+			
+			
+			
+			
+			
+			
+			
 				}
-			}
+			
 			
 	} // MAIN
 	
 
-} // CLASE
+ // CLASE
