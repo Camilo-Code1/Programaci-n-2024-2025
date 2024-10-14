@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-    public class Practica_3 {
+    public class Practica_3_1 {
     
         public static void main(String[] args) {
 
@@ -16,7 +16,7 @@ import java.util.Scanner;
 
                 if (cantidad % 5 != 0) {
                     System.out.println("Solo se admiten billetes de 5");
-                } break;
+                } continue;
 
         } while (cantidad % 5 != 0);
 
@@ -68,6 +68,7 @@ import java.util.Scanner;
 
 
         }   
+        reader.close();
     }
 }
     
