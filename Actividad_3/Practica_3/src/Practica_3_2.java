@@ -1,35 +1,16 @@
 import java.util.Scanner;
 
+public class Practica_3_2 {
+    public static void main(String[] args) throws Exception {
 
-    public class Practica_3 {
-    
-        public static void main(String[] args) {
-
-            Scanner reader = new Scanner(System.in);
-            
-            int cantidad; 
-
-            do {
-                System.out.println("Buenos días, inserte el dinero (Solo se admiten billetes de 5)");
-                cantidad = reader.nextInt();
-
-                if (cantidad % 5 != 0) {
-                    System.out.println("Solo se admiten billetes de 5");
-                } break;
-        } while (cantidad % 5 != 0);
-
-        int bill50 = cantidad / 50;
-
-        
-
-            // EJERCICIO 2
+        // EJERCICIO 2
 
 
  
 
             String opcion =  "";
 
-        
+            Scanner reader = new Scanner(System.in);
             do{
 
                 System.out.println("1 - Sumar");
@@ -113,5 +94,3 @@ import java.util.Scanner;
 
         }
     }
-
-
