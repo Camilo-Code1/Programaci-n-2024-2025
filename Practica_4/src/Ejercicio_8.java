@@ -6,14 +6,15 @@ public class Ejercicio_8 {
 
         Scanner sc = new Scanner(System.in);
 
+        double [] random =  new double [100];
 
+        for  (int i = 0; i < 100; i++) {
 
-
-
-
-
-
-
+        double num = Math.random()*1;
+        
+            random[i] = num;
+        System.out.println(num);
+        }
 
 
         sc.close();
