@@ -6,17 +6,27 @@ public class Ejercicio_8 {
 
         Scanner sc = new Scanner(System.in);
 
+        System.out.println("Introduzca el valor real para saber si son iguales o superiores a los valores: ");
+        float R = sc.nextFloat();
+
         double [] random =  new double [100];
 
         for  (int i = 0; i < 100; i++) {
 
-        double num = Math.random()*1;
+        double num = Math.random();
         
-            random[i] = num;
+        random[i] = num;
         System.out.println(num);
+
         }
-
-
-        sc.close();
+        for (int i = 0; i < random.length; i++) {
+            if (random[i] >= R) {
+                System.out.println("El numero es igual");
+            } else {
+                System.out.println("El numero real es mayor");
+            }
+        }
+        
+    
     } // MAIN
 } // MAIN

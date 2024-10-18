@@ -4,18 +4,18 @@ public class Ejercicio_11 {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        try (Scanner sc = new Scanner(System.in)) {
+
+        System.out.println("ASLJKMDMLKJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ");
+            int S = sc.nextInt();
+
+            
 
 
 
 
 
 
-
-
-
-
-
-        sc.close();
+        }
     } // MAIN
 } // MAIN
