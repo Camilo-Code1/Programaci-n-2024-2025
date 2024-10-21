@@ -5,7 +5,7 @@ public class Ejercicio_12 {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-
+ 
         String opcion = "";
         int[] numeros = new int[10];
         int contador = 0;
@@ -19,25 +19,36 @@ public class Ejercicio_12 {
 
             
 
-            switch (opcion) {
+            switch(opcion) {
                 
                 case "a":
                     System.out.println("Los valores son: ");
-                    for (int i = 0; i < contador; i++) {
-                        System.out.println(numeros[i] + " ");
+                    for (int i = 0; i < numeros.length; i++) {
+                        System.out.println("Posición " + i + ": " + numeros[i]);
                     }    
+                    System.out.println();
+
+                    break;
+                
+                case "b":
+                    System.out.println("Introduce un valor: ");
+                    int valor = sc.nextInt();
                     
+                    System.out.println("Introduce una posición (0-9): ");
+                    int posicion = sc.nextInt();
+
+                    if (posicion >= 0 &&  posicion < numeros.length) {
+                        numeros [posicion] = valor;
+                        System.out.println("El valor " + valor + " introducido en la posicion " + posicion);
+                        }
                     break;
 
-                case "b":
+                case "c":
+
+                     System.out.println("Saliendo del programa...");
+                    break;
 
 
-
-
-                default:
-
-                System.out.println("Opción inválida. Por favor, inténtelo de nuevo");
-                        break;                 
             }
 
 
