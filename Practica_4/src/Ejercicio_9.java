@@ -8,15 +8,15 @@ public class Ejercicio_9 {
         int[] random = new int[100];
 
       
-        for (int i = 0; i < 100; i++) {
-            int num = (int) (Math.random() * 10);
-            random[i] = num;
-            System.out.println(num);
-        }
+        for (int i = 0; i < random.length; i++) {
+            random[i] = (int) (1 + Math.random() * 10);
+       }
 
    
-        System.out.println("Introduzca el valor N para buscar:");
-        int N = sc.nextInt(); 
+        
+        System.out.println("Ingrese un valor N (entre 1 y 10) para buscar:");
+        int N = sc.nextInt();
+        
         boolean encontrado = false;
 
 

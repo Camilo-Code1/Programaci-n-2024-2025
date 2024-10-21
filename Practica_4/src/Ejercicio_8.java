@@ -21,9 +21,9 @@ public class Ejercicio_8 {
         }
         for (int i = 0; i < random.length; i++) {
             if (random[i] >= R) {
-                System.out.println("El numero es igual");
+                System.out.println("El número aleatorio " + random[i] + " es igual o superior a " + R);
             } else {
-                System.out.println("El numero real es mayor");
+                System.out.println("El número aleatorio " + random[i] + " es menor que " + R);
             }
         }
         
