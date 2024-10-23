@@ -1,0 +1,70 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "Practica_5_a801de8c"
+        },
+        {
+            "type": "java",
+            "name": "EJ1",
+            "request": "launch",
+            "mainClass": "EJ1",
+            "projectName": "Practica_5_a801de8c"
+        },
+        {
+            "type": "java",
+            "name": "EJ2",
+            "request": "launch",
+            "mainClass": "EJ2",
+            "projectName": "Practica_5_a801de8c"
+        },
+        {
+            "type": "java",
+            "name": "EJ3",
+            "request": "launch",
+            "mainClass": "EJ3",
+            "projectName": "Practica_5_a801de8c"
+        },
+        {
+            "type": "java",
+            "name": "EJ4",
+            "request": "launch",
+            "mainClass": "EJ4",
+            "projectName": "Practica_5_a801de8c"
+        },
+        {
+            "type": "java",
+            "name": "EJ5",
+            "request": "launch",
+            "mainClass": "EJ5",
+            "projectName": "Practica_5_a801de8c"
+        },
+        {
+            "type": "java",
+            "name": "EJ6",
+            "request": "launch",
+            "mainClass": "EJ6",
+            "projectName": "Practica_5_a801de8c"
+        },
+        {
+            "type": "java",
+            "name": "EJ8",
+            "request": "launch",
+            "mainClass": "EJ8",
+            "projectName": "Practica_5_a801de8c"
+        }
+    ]
+}

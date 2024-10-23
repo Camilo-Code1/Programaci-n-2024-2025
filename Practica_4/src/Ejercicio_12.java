@@ -7,7 +7,7 @@ public class Ejercicio_12 {
         Scanner sc = new Scanner(System.in);
  
         String opcion = "";
-        int[] numeros = new int[10];
+        int[] numeros = new int[6];
         int contador = 0;
 
         do { 
@@ -34,7 +34,7 @@ public class Ejercicio_12 {
                     System.out.println("Introduce un valor: ");
                     int valor = sc.nextInt();
                     
-                    System.out.println("Introduce una posición (0-9): ");
+                    System.out.println("Introduce una posición (0-5): ");
                     int posicion = sc.nextInt();
 
                     if (posicion >= 0 &&  posicion < numeros.length) {
