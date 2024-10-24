@@ -6,8 +6,9 @@ public class EJ2 {
 
         Scanner sc = new Scanner(System.in);
 
+        int [][] matriz  = new int [10][10];
 
-
+        
 
 
 
