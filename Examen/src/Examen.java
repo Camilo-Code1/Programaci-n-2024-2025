@@ -42,6 +42,7 @@ public class Examen {
             System.out.println("---------------------");
             opcion = sc.nextLine();
 
+            sc = new Scanner(System.in);
 
             switch (opcion) {
 
@@ -122,6 +123,8 @@ public class Examen {
 
                     System.out.println("");
                     System.out.println("---------------------");
+
+
 
                     opcion = sc.nextLine();
                     

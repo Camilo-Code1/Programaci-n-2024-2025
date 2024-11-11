@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
-public class App {
+public class Completo {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         String opcionJugador;
         String decisionComputadora;
-        int contadorPiedra = 0, contadorPapel = 0, contadorTijeras = 0, Victorias = 0,  Empates = 0, Derrotas = 0;
+        int Victorias = 0,  Empates = 0, Derrotas = 0;
         String presentacion = "Bienvenido, jugador\n" +
                 "\n" +
                 "Este juego se llama piedra, papel y tijeras. Las reglas son las siguientes:\n" +
@@ -85,11 +85,21 @@ public class App {
                 Derrotas++;
             }
 
-            System.out.println(Empates);
-            System.out.println(Victorias);
-            System.out.println(Derrotas);
+            System.out.println("");
+            System.out.println("Contador de victorias: " + Victorias);
 
 
+                System.out.println("--------------------------------");
+
+            System.out.println("Contador de empates: " + Empates);
+
+                System.out.println("--------------------------------");
+
+
+            System.out.println("Contador de derrotas: " + Derrotas);
+            System.out.println("");
+
+            System.out.println("Si desea salir del programa presione S");
         } while (true); // Bucle infinito hasta que el jugador decida salir
 
         sc.close();

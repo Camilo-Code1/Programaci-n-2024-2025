@@ -4,6 +4,8 @@ public class Instrucciones {
     private String Apellido;
     private int edad;
 
+    // Constructor
+
     public Instrucciones(String Nombre, String Apellido){
         this.Nombre  = Nombre;
         this.Apellido = Apellido;
