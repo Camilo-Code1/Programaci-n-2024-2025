@@ -1,18 +1,18 @@
     public class Movimiento {
-        private int ID;
+        private String ID;
         private int Fecha;
         private String Tipo;
         private double Cantidad;
         
 
-        public Movimiento (int ID, int Fecha, String Tipo, double Cantidad) {
+        public Movimiento (String ID, String Fecha, String Tipo, String Cantidad) {
             this.ID = ID;
             this.Fecha = 0;
             this.Tipo = Tipo;
             this.Cantidad = 0;
         }
 
-        public int getID() {
+        public String getID() {
             return ID;
         }
 

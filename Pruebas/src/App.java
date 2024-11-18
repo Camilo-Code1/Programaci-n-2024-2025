@@ -8,9 +8,11 @@ public class App {
            Instrucciones uu = new Instrucciones ("Joaquin", "Otonello");
 
            System.out.println(uu.getNombre());
-           System.out.println(uu.getApellido());
+             System.out.println(uu.getApellido());
            System.out.println("Puñoñ");
         System.out.println("");
+
+        System.out.println();
             
 
             System.out.println("Por favor, inserte su nombre");
