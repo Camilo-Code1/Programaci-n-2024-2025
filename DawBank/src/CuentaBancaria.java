@@ -22,31 +22,25 @@ import java.util.regex.Pattern;
 
     public CuentaBancaria (String IBAN, String Titular, double Saldo) { // Posible fallo double
         
-if (ibanCorrec(IBAN) && !Titular.isEmpty() && Saldo >= saldo_minimo) {        this.IBAN = IBAN;
+    if (ibanCorrec(IBAN) && !Titular.isEmpty()) {        
+        this.IBAN = IBAN;
         this.Titular = Titular;
         this.Saldo = 0;
         this.Movimientos = new ArrayList<>();
         } else {
         System.out.println("Datos de cuenta invalidos.");
 
-        }
-    }
-            // A
-
-        public String getIBAN(){
-            return this.IBAN;
+            }
         }
 
-        public String getTitular(){
-            return this.Titular;
+        private boolean ibanCorrec(String IBAN) {
+            return IBAN != null && IBAN.matches("ES\\d{22}");
         }
-        public double getSaldo(){
-            return this.Saldo;
-        }
+            
+        public void mostrarDatos() {
+            System.out.printf("IBAN: %s, Titular: %s, Saldo: %s", IBAN, Titular, Saldo);
+        }	
 
-        public List<Movimiento> getMovimientos(){
-            return this.Movimientos;
-        }
 
 
         public void Ingreso(double Cantidad){
