@@ -1,33 +1,23 @@
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
     public class Movimiento {
-        private String ID;
-        private int Fecha;
+        private int ID;
+        private String Fecha;
         private String Tipo;
         private double Cantidad;
         
 
-        public Movimiento (String ID, String Fecha, String Tipo, String Cantidad) {
+        public Movimiento (int ID, String Fecha, String Tipo, double Cantidad) {
             this.ID = ID;
-            this.Fecha = 0;
+            this.Fecha = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));;
             this.Tipo = Tipo;
-            this.Cantidad = 0;
+            this.Cantidad = Cantidad;
         }
 
-        public String getID() {
-            return ID;
-        }
 
-        public int getFecha() {
-            return Fecha;
-        }
-
-        public String getTipo() {
-            return Tipo;
-        }
-
-        public double getCantidad() {
-            return Cantidad;
-        }
-        
+ 
 
 
         // Posible forma de mostrar movimientos

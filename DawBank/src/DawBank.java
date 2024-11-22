@@ -11,14 +11,12 @@ public class DawBank {
         String opcion = "";
         Scanner sc = new Scanner(System.in);
 
-        Movimiento Movi = new Movimiento("Jose", "1234567890", "1234567890", "1234567890");
 
-        Movi.mostrarInfoMovimiento();
 
         
         Pattern pat = Pattern.compile("[A-Z]{2}\\d{22}$");
     
-
+                                   
         System.out.println("Introduzca el IBAN correcto: ");
         ibanCorrec = sc.nextLine();
 
@@ -94,7 +92,11 @@ public class DawBank {
                     }
 
         // )while (opcion !=8);
+
+        }
     }
-}
+
+
+
 
 

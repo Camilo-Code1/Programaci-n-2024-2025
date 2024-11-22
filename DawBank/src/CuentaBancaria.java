@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 
     // import java.time.LocalDate;
@@ -15,16 +16,21 @@ import java.util.List;
         private double Saldo;
 
         // Coleccion de movimientos 
+
         private List<Movimiento> Movimientos;
 
 
-    public CuentaBancaria (String IBAN, String Titular, double Saldo) {
-        this.IBAN = IBAN;
+    public CuentaBancaria (String IBAN, String Titular, double Saldo) { // Posible fallo double
+        
+if (ibanCorrec(IBAN) && !Titular.isEmpty() && Saldo >= saldo_minimo) {        this.IBAN = IBAN;
         this.Titular = Titular;
         this.Saldo = 0;
         this.Movimientos = new ArrayList<>();
-        }
+        } else {
+        System.out.println("Datos de cuenta invalidos.");
 
+        }
+    }
             // A
 
         public String getIBAN(){
@@ -60,5 +66,7 @@ import java.util.List;
         
         
     // fecha = LocalDateTime.now()toString();
+
+
     } // MAIN
 
