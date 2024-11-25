@@ -14,7 +14,7 @@ public class DawBank {
         System.out.println("(Presione intro para continuar)");
 
         String IBAN = obtenerIbanValido(sc);
-        System.out.println("Ingrese el titutlar de la cuenta: ");
+        System.out.println("Ingrese el titular de la cuenta: ");
         String titular = sc.nextLine();
 
         CuentaBancaria c1 = new CuentaBancaria(IBAN, titular);
@@ -31,6 +31,9 @@ public class DawBank {
 
 
     private static int MostrarMenu(Scanner scanner) {
+
+        System.out.println("-----------------------------------------------");
+
             System.out.println("\nBienvenido,\r\n" + //
                             "\r\n" + //
                             "Por favor realice sus tramites: \r\n" + //
@@ -42,7 +45,11 @@ public class DawBank {
                             "5 - Ingreso\r\n" + //
                             "6 - Retirada\r\n" + //
                             "7 - Movimientos\r\n" + //
-                            "8 - Salir");
+                            "8 - Salir\n");
+
+        System.out.println("-----------------------------------------------");
+
+
                             return scanner.nextInt();
 
     }
@@ -102,24 +109,24 @@ public class DawBank {
                             break;
                         
                         case 8:
-                        System.out.println("Saliendo del programa...");
+                        System.out.println("\nSaliendo del programa...\n");
                             break;
                         
                         default:
-                        System.out.println("Opción inválida. Por favor, inténtelo de nuevo");
+                        System.out.println("\nOpción inválida. Por favor, inténtelo de nuevo\n");
                         break;
                     }
         }
 
         private static void realizarIngreso(CuentaBancaria cuenta, Scanner scanner) {
-            System.out.println("Ingrese la cantidad a ingresar: ");
+            System.out.println("Inserte la cantidad a ingresar: ");
             double cantidadIngreso = scanner.nextDouble();
             cuenta.Ingreso(cantidadIngreso);
         }
 
 
         private static void realizarRetirada(CuentaBancaria cuenta, Scanner scanner) {
-            System.out.println("Ingrese la cantidad a retirar: ");
+            System.out.println("Inserte la cantidad a retirar: ");
             double cantidadRetirada = scanner.nextDouble();
             cuenta.Retirada(cantidadRetirada);
         }

@@ -22,7 +22,7 @@ import java.time.format.DateTimeFormatter;
         // Posible forma de mostrar movimientos
 
         public void mostrarInfoMovimiento() {
-            System.out.println("ID: " + ID + ", Fecha: " + Fecha + ", Tipo: " + Tipo + ", Cantidad: " + Cantidad);
+            System.out.println("\nID: " + ID + ", Fecha: " + Fecha + ", Tipo: " + Tipo + ", Cantidad: \n" + Cantidad);
         }
 
 
