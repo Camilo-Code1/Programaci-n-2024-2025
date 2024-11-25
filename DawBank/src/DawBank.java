@@ -1,46 +1,37 @@
 
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class DawBank {
     public static void main(String[] args) throws Exception {
 
 
-        String ibanCorrec = null;
-        String opcion = "";
+        int opcion;
         Scanner sc = new Scanner(System.in);
+        CuentaBancaria cuenta;
 
 
+        System.out.println("Bienvenido a DawBank");
+        System.out.println("(Presione intro para continuar)");
 
+        String IBAN = obtenerIbanValido(sc);
+        System.out.println("Ingrese el titutlar de la cuenta: ");
+        String titular = sc.nextLine();
+
+        CuentaBancaria c1 = new CuentaBancaria(IBAN, titular);
         
-        Pattern pat = Pattern.compile("[A-Z]{2}\\d{22}$");
-    
-                                   
-        System.out.println("Introduzca el IBAN correcto: ");
-        ibanCorrec = sc.nextLine();
 
-        Matcher mat = pat.matcher(ibanCorrec);
+        do {
+            opcion = MostrarMenu(sc);
+            procesarOpcion(opcion, c1, sc);
+        } while (opcion != 8);
 
-        while(!mat.matches()){
+        sc.close();
 
-            System.out.println("El IBAN introducido es incorrecto, por favor "
- 
-                    + "introduzca un IBAN  válido.");
- 
-            System.out.println("Introduce un IBAN correcto:");
- 
-            ibanCorrec = sc.nextLine();
- 
-            mat = pat.matcher(ibanCorrec);
-        }
- 
-         System.out.println("El " + ibanCorrec + " es un IBAN válido");
+    }
 
 
-        // do (
-
-            System.out.println("Bienvenido,\r\n" + //
+    private static int MostrarMenu(Scanner scanner) {
+            System.out.println("\nBienvenido,\r\n" + //
                             "\r\n" + //
                             "Por favor realice sus tramites: \r\n" + //
                             "\r\n" + //
@@ -52,37 +43,65 @@ public class DawBank {
                             "6 - Retirada\r\n" + //
                             "7 - Movimientos\r\n" + //
                             "8 - Salir");
+                            return scanner.nextInt();
+
+    }
+
+    private static void procesarOpcion(int opcion, CuentaBancaria cuenta, Scanner scanner) {
+            scanner.nextLine();
                     switch (opcion) {
-                        case "1":
+                        case 1:
+                            System.out.println("");
                         System.out.println("Datos de la cuenta: ");
+                            System.out.println("");
+                            
+                        cuenta.mostrarDatos();
+                            System.out.println("");
+
                             break;
 
-                        case "2":
-                        System.out.println("IBAN");
+                        case 2:
+                            System.out.println("");
+                            System.out.println("IBAN: " + cuenta.getIBAN());
+                            System.out.println("");
+
                             break;
 
-                        case "3":
-                        System.out.println("Titular");
+                        case 3:
+                            System.out.println("");
+                            System.out.println("Titular: " + cuenta.getTitular());
+                            System.out.println("");
+
                             break;
 
-                        case "4":
-                        System.out.println("Saldo");
+                        case 4:
+                            System.out.println("");
+                            System.out.println("Saldo: " + cuenta.getSaldo());
+                            System.out.println("");
+
                             break;
 
-                        case "5":
-                        System.out.println("Ingreso");
+                        case 5:
+                            System.out.println("");
+                            realizarIngreso(cuenta, scanner);
+                            System.out.println("");
+
                             break;
                         
-                        case "6":
-                        System.out.println("Retirada");
+                        case 6:
+                            System.out.println("");
+                            realizarRetirada(cuenta, scanner);
+                            System.out.println("");
                             break;
                                               
-                        case "7":
+                        case 7:
+                            System.out.println("");
                         System.out.println("Los movimientos que se han realizado son: ");
-                     
+                            cuenta.MostrarMovimientos();
+                            System.out.println("");
                             break;
                         
-                        case "8":
+                        case 8:
                         System.out.println("Saliendo del programa...");
                             break;
                         
@@ -90,12 +109,40 @@ public class DawBank {
                         System.out.println("Opción inválida. Por favor, inténtelo de nuevo");
                         break;
                     }
-
-        // )while (opcion !=8);
-
         }
-    }
 
+        private static void realizarIngreso(CuentaBancaria cuenta, Scanner scanner) {
+            System.out.println("Ingrese la cantidad a ingresar: ");
+            double cantidadIngreso = scanner.nextDouble();
+            cuenta.Ingreso(cantidadIngreso);
+        }
+
+
+        private static void realizarRetirada(CuentaBancaria cuenta, Scanner scanner) {
+            System.out.println("Ingrese la cantidad a retirar: ");
+            double cantidadRetirada = scanner.nextDouble();
+            cuenta.Retirada(cantidadRetirada);
+        }
+
+        private static String obtenerIbanValido(Scanner scanner){
+            String IBAN = scanner.nextLine();
+            while (true) {
+                System.out.println("Ingrese el IBAN de la cuenta (Formato: XX0000000000000000000000): ");
+                IBAN = scanner.nextLine();
+                if (validarIBAN (IBAN)) {
+                   return IBAN;
+                }
+                System.out.println("IBAN inválido. Por favor, inténtelo de nuevo");
+            }
+        }
+
+        private static boolean validarIBAN(String IBAN) {
+            return IBAN.matches("[A-Z]{2}\\d{22}");
+        }
+
+ 
+
+    }
 
 
 
