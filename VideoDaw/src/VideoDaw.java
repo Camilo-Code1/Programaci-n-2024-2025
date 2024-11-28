@@ -6,8 +6,8 @@ public class VideoDaw {
         private String CIF;
         private String Direccion;
         private String FechaAlta;
-        private PeliculasRegistradas[] Pelicula;
-        private ClientesRegistrados[] Cliente;
+        // private PeliculasRegistradas[] Pelicula;
+        // private ClientesRegistrados[] Cliente;
 
             public VideoDaw(String CIF, String Direccion) {
                     this.CIF = CIF;

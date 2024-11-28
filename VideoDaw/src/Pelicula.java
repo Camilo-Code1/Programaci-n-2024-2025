@@ -12,6 +12,7 @@ public class Pelicula {
            private boolean IsAlquilada;
 
         public Pelicula(String COD, String Titulo, String Genero) {
+  
             this.COD = COD;
             this.Titulo = Titulo;
             this.Genero = Genero;
@@ -19,16 +20,16 @@ public class Pelicula {
             this.FechadeBaja = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
             this.FechadeAlquiler = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
             this.IsAlquilada = false; // Estado de pelicula, si esta alquilada o no (De normal no esta por lo tanto lo puse en false)
+        } 
+    }
 
-        }
-
-
-
-
+        
 
 
 
 
 
 
-}
+
+
+
