@@ -5,13 +5,13 @@ public class Pelicula {
 
            private String COD;
            private String Titulo;
-           private String Genero; 
+           private Genero Genero; 
            private String FechadeRegistro;
            private String FechadeBaja;
            private String FechadeAlquiler;
            private boolean IsAlquilada;
 
-        public Pelicula(String COD, String Titulo, String Genero) {
+        public Pelicula(String COD, String Titulo, Genero Genero) {
   
             this.COD = COD;
             this.Titulo = Titulo;
@@ -19,7 +19,7 @@ public class Pelicula {
             this.FechadeRegistro = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
             this.FechadeBaja = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
             this.FechadeAlquiler = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-            this.IsAlquilada = false; // Estado de pelicula, si esta alquilada o no (De normal no esta por lo tanto lo puse en false)
+            this.IsAlquilada = false; // Estado de pelicula, si esta alquilada o no (De normal no lo esta, por lo tanto lo puse en false)
         } 
 
             public String getCOD(){
@@ -28,7 +28,7 @@ public class Pelicula {
             public String getTitulo(){
             return Titulo; 
             }
-            public String getGenero(){
+            public Genero getGenero(){
             return Genero; 
             }
             public String getFechadeRegistro(){

@@ -64,7 +64,7 @@ public class GestionVideoDaw {
             }
         } while (opcion != 8);
 
-        sc.close(); // Cerrar el scanner
+        sc.close(); 
     }
 
     private static String obtenerDNI(Scanner scanner) {
