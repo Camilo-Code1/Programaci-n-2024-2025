@@ -27,17 +27,26 @@ public class Cliente {
             }
         }
 
-            // public boolean  AgregarCliente (Cliente cliente) {
-            //     if (numClientes < 100) {
-            //         Clientes[numClientes] = cliente;
-            //         numClientes++;
-            //         return true;
-            //     } else {
-            //         System.out.println("\nNo se pudo agregar más clientes. Limite de registro alcanzado.");
-            //         return false;
-            //     }
+        public String getDNI() {
+            return DNI;
+        }
 
-            // }
+        public String getNombre() {
+            return Nombre;
+        }
+
+        public String getNumSocio() {
+            return NumSocio;
+        }
+
+        public String getDireccion() {
+            return Direccion;
+        }
+
+        public int getPeliculasAlquiladas() {
+            return PeliculasAlquiladas;
+        }
+      
     
             private boolean DNICorrec(String DNI) {
                 return DNI != null && DNI.matches("\\d{8}[A-Z]{1}");
@@ -52,6 +61,4 @@ public class Cliente {
 
 
             }
-
-
 

@@ -18,8 +18,20 @@ public class VideoDaw {
 
             }
 
+            public String getCIF() {
+                return CIF;
+            }
+
+            public String getDireccion() {
+                return Direccion;
+            }
+
+
+            public void MostrarVideoClub() {
+                System.out.println("\nCIF: " + CIF + "\nDireccion" + Direccion + "\nFecha de alta: " + FechaAlta);
+            }
 
 
 
-
+            
 }

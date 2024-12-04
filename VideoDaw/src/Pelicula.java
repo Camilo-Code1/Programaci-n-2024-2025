@@ -19,7 +19,7 @@ public class Pelicula {
             this.FechadeRegistro = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
             this.FechadeBaja = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
             this.FechadeAlquiler = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-            this.IsAlquilada = false; // Estado de pelicula, si esta alquilada o no (De normal no lo esta, por lo tanto lo puse en false)
+            this.IsAlquilada = true; // Estado de pelicula, si esta alquilada o no (De normal esta disponible, por lo tanto lo puse en true)
         } 
 
             public String getCOD(){
@@ -63,11 +63,12 @@ public class Pelicula {
                 ", Fecha de Alquiler: " + FechadeAlquiler + 
                 ", Estado: " + IsAlquilada);            }
         
+
+
+                
     }
 
         
-
-
 
 
 

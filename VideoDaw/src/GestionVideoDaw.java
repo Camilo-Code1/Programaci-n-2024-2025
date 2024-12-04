@@ -4,6 +4,9 @@ public class GestionVideoDaw {
     private static Cliente[] clientes = new Cliente[100];
     private static int numClientes = 0;
 
+    private static Pelicula[] Pelis = new Pelicula[100];
+    private static int numPelis = 0;
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Bienvenido a VideoDaw.");
@@ -14,23 +17,23 @@ public class GestionVideoDaw {
         System.out.println("Por favor introduzca su nombre completo: ");
         String nombre = sc.nextLine();
 
-        System.out.println("-----------------------------------------------");
-        System.out.println("\nBienvenido, " + nombre + ",\r\n" +
-                "\r\n" +
-                "por favor realice sus operaciones seleccionando las siguientes opciones: \r\n" +
-                "\r\n" +
-                "1. Crear y registrar Videoclub en la franquicia.\r\n" +
-                "2. Registrar pelicula en videoclub.\r\n" +
-                "3. Crear y registrar cliente en videoclub.\r\n" +
-                "4. Alquilar pelicula.\r\n" +
-                "5. Devolver pelicula.\r\n" +
-                "6. Dar de baja cliente.\r\n" +
-                "7. Dar de baja pelicula.\r\n" +
-                "8. Salir.\n ");
-        System.out.println("-----------------------------------------------");
-
         int opcion;
         do {
+            System.out.println("-----------------------------------------------");
+            System.out.println("\nBienvenido, " + nombre + ",\r\n" +
+                    "\r\n" +
+                    "por favor realice sus operaciones seleccionando las siguientes opciones: \r\n" +
+                    "\r\n" +
+                    "1. Crear y registrar Videoclub en la franquicia.\r\n" +
+                    "2. Registrar pelicula en videoclub.\r\n" +
+                    "3. Crear y registrar cliente en videoclub.\r\n" +
+                    "4. Alquilar pelicula.\r\n" +
+                    "5. Devolver pelicula.\r\n" +
+                    "6. Dar de baja cliente.\r\n" +
+                    "7. Dar de baja pelicula.\r\n" +
+                    "8. Salir.\n ");
+            System.out.println("-----------------------------------------------");
+
             opcion = sc.nextInt();
             sc.nextLine(); 
 
@@ -39,13 +42,13 @@ public class GestionVideoDaw {
                     // Implementar 
                     break;
                 case 2:
-                    // Implementar 
+                    AgregarPelicula(sc);
                     break;
                 case 3:
                     AgregarCliente(sc);
                     break;
                 case 4:
-                    // Implementar 
+                    AlquilerPelicula(sc);
                     break;
                 case 5:
                     // Implementar
@@ -83,11 +86,7 @@ public class GestionVideoDaw {
         return DNI.matches("\\d{8}[A-Z]{1}");
     }
 
-
-
-
-        // Opcion 3 Crear y registrar cliente en el videoclub
-
+    // Opcion 3 Crear y registrar cliente en el videoclub
     public static void AgregarCliente(Scanner sc) {
         System.out.println("Ingrese el nombre del cliente: ");
         String nombre = sc.nextLine();
@@ -117,9 +116,41 @@ public class GestionVideoDaw {
         }
     }
 
+    public static void AgregarPelicula(Scanner sc) {
+        System.out.println("Ingrese el codigo de la pelicula: ");
+        String COD = sc.nextLine();
+        System.out .println("Inserte el titulo de la pelicula: ");
+        String Titulo = sc.nextLine();
+        System.out.println("Inserte el genero de la pelicula: ");
+        String Genero = sc.nextLine(); // Averiguar como hacer el enum y todo eso
+        System.out.println("Inserte la fecha de registro: ");
+        String FechadeRegistro = sc.nextLine();
+        System.out.println("Inserte la fecha de baja: ");
+        String FechadeBaja = sc.nextLine();
+        System.out.println("Inserte la fecha del ultimo alquiler: ");
+        String FechadeAlquiler = sc.nextLine();
+        System.out.println("Por favor, indique si la pelicula esta alquilada o no: ");
+        String IsAlquilada = sc.nextLine(); // Hacer un if y luego lea la respuesta como un true o false
+
+        Pelicula Pelisstas = new Pelicula(COD, Titulo, null);
+
+        if (numPelis < 100) {
+            Pelis[numPelis] = Pelisstas;
+            numPelis++;
+            System.out.println("Película agregada con éxito.");
+            Pelisstas.mostrarInfoPelicula();
+        } else {
+            System.out.println("No hay espacio para agregar más películas.");
+        }
+    }
+
+    public static void AlquilerPelicula (Scanner sc) {
+
+    for (int i = 0; i < Pelis.length; i++) {
+        System.out.println("Peliculas: " + Pelis[i]);
+    }
+    }
 
 
 
-
-
-}
+} // MAIIIIIIINNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
