@@ -11,7 +11,7 @@ public class Cliente {
          private String FechaBaja;
          private int PeliculasAlquiladas;
 
-    
+
 
         public Cliente (String DNI, String Nombre, String NumSocio, String Direccion, int PeliculasAlquiladas) {
                 if  (DNICorrec(DNI) && !Nombre.isEmpty()) { 

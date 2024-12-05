@@ -38,7 +38,7 @@ public class GestionVideoDaw {
 
             switch (opcion) {
                 case 1:
-                    // Implementar 
+                    // Implementar  
                     break;
                 case 2:
                     videoClub.AgregarPelicula(sc);
