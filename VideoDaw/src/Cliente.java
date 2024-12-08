@@ -48,10 +48,15 @@ public class Cliente {
         }
       
     
+
+
+
             private boolean DNICorrec(String DNI) {
                 return DNI != null && DNI.matches("\\d{8}[A-Z]{1}");
             }
 
+
+            
             public void MostrarinfoClientes() {
                 System.out.println("\nNombre: " + Nombre + "\nDNI: " + DNI + "\nNúmero de socio: " + NumSocio + "\nDirección: " + Direccion + "\nFecha de nacimiento: " + FechaNacimiento + "\nFecha de baja: " + FechaBaja + "\nPeliculas alquiladas: " + PeliculasAlquiladas);
             }
@@ -61,4 +66,3 @@ public class Cliente {
 
 
             }
-
