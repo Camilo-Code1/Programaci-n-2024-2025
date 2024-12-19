@@ -33,6 +33,11 @@ public class GestionVideoDaw {
                     "8. Salir.\n ");
             System.out.println("-----------------------------------------------");
 
+            System.out.println("La vaca Lola,\r\n" + //
+                                "Lola de vaca, \r\n" + //
+                                "Loca la vaca,\r\n" + //
+                                "vaca la loca, ");
+
             opcion = sc.nextInt();
             sc.nextLine(); 
 
