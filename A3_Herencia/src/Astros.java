@@ -1,4 +1,4 @@
-public class Astros {
+public class Astros{
     private int radio_ecuatorial;
     private int rotacion_sobre_eje;
     private int temperatura_media;
@@ -24,4 +24,7 @@ public class Astros {
             return gravedad;
         }
 
+
+
+        
 }
