@@ -4,12 +4,7 @@ public abstract  class Astros{
     private int temperatura_media;
     private int gravedad;
 
-        // public Astros(int radio_ecuatorial, int rotacion_sobre_eje, int temperatura_media, int gravedad) {
-        //     this.radio_ecuatorial = 0;
-        //     this.rotacion_sobre_eje = 0;
-        //     this.temperatura_media = 0;
-        //     this.gravedad = 0;
-        // }
+      
 
         public int getRadio_ecuatorial(){
             return radio_ecuatorial;
@@ -27,13 +22,12 @@ public abstract  class Astros{
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-                sb.append("Astros {");
-                sb.append("Radio ecuatorial: ") .append(getRadio_ecuatorial());
-                sb.append("Rotacion sobre su eje: ").append(rotacion_sobre_eje());
-                sb.append("Temperatura media: ").append(temperatura_media());
-                sb.append("Gravedad: ").append(gravedad());
+                sb.append("\nAstros: ");
+                sb.append("\nRadio ecuatorial: ") .append(getRadio_ecuatorial());
+                sb.append("\nRotacion sobre su eje: ").append(rotacion_sobre_eje());
+                sb.append("\nTemperatura media: ").append(temperatura_media());
+                sb.append("\nGravedad: ").append(gravedad());
     
-                sb.append("}");
                 return sb.toString();
     
         }
