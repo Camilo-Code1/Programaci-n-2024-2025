@@ -1,30 +1,49 @@
-public class Agenda extends Contacto {
+public class Agenda extends Contacto{
 
-    private String anadirContacto;
-    private String eliminarContacto;
-    private String existeContacto;
-    private String buscarContacto;
+    private static int contarC;
+            Contacto[] contactos;
+            private Contacto contacto;
+         
+    
+        public Agenda(String nombre, String telefono, int contarC) {
+            super(nombre, telefono);
+            this.contarC = contarC;
+        }
+    
+            public static int getContarC() {
+                return contarC;
+        }
 
-    public Agenda(String nombre, int telefono, String anadirContacto, String eliminarContacto, String existeContacto, String buscarContacto) {
-        super(nombre, telefono);
-        this.anadirContacto = "AnadirContacto";
-        this.eliminarContacto = "EliminarContacto";
-        this.existeContacto = "ExisteContacto";
-        this.buscarContacto = "BuscarContacto";
+    
+    
+        public static void setContarC(int contarC) {
+            Agenda.contarC = contarC;
+        }
+
+        public Contacto[] geContactos(){
+            return contactos;
+        }
+     
+        public void setContactos(Contacto[] contactos) {
+            this.contactos = contactos;
+        }
+        public void setContactos (Contacto contactos) {
+            this.contacto = contacto;
+        }
+        
+
+        public boolean agregarContacto (){
+            if (contarC <contactos.length) {
+                contactos[contarC] = contacto;
+                contarC++;
+                return true;
+        }
+        else {
+            System.out.println("No hay más espacio para agregar mas contactos");
+            return false;
+        }
     }
 
-        public String getanadirContacto(){
-            return anadirContacto;
-        }
-        public String geteliminarContacto(){
-            return eliminarContacto;
-        }
-        public String getexisteContacto(){
-            return existeContacto;
-        }
-        public String buscarContacto(){
-            return buscarContacto;
-        }
 
 
 

@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ProgramaAgenda {
     public static void main(String[] args) throws Exception {
 
-                    Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         int opcion;
         String menuPri = "1. Añadir contacto.\r\n" + //
                         "2. Eliminar contacto.\r\n" + //

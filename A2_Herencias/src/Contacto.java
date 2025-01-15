@@ -1,9 +1,9 @@
 public class Contacto{
 
         private String nombre;
-        private int telefono;
+        private String telefono;
 
-public Contacto(String nombre, int telefono) {
+public Contacto(String nombre, String telefono) {
     this.nombre = nombre;
     this.telefono = telefono;
 }
@@ -11,20 +11,15 @@ public Contacto(String nombre, int telefono) {
     public String getnombre(){
         return nombre;
     }
-    public int gettelefono(){
+    public String gettelefono(){
         return telefono;
     }
 
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("\nContacto"); 
-        sb.append("\nNombre: ").append(getnombre());
-        sb.append("\nTelefono:").append(gettelefono());
-        
-        return sb.toString();
-    }
+        return "Agenda: \n[Nombre=" + nombre + " \nNumero telefonico=" + telefono + "]";   
+     }
 
 
 }           // MAIN
