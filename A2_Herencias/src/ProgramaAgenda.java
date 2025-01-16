@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class ProgramaAgenda {
     public static void main(String[] args) throws Exception {
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        Agenda[] agenda = new Agenda[10];
         int opcion;
         String menuPri = "1. Añadir contacto.\r\n" + //
                         "2. Eliminar contacto.\r\n" + //
@@ -18,9 +19,29 @@ public class ProgramaAgenda {
         System.out.println("-----------------------------------------------");
         System.out.println(menuPri);
         System.out.println("-----------------------------------------------");
-        opcion = scanner.nextInt();
-        scanner.nextLine(); 
+        opcion = sc.nextInt();
+        sc.nextLine(); 
 
+        do { 
+            switch (opcion) {
+                case 1:
+                    Agenda.agregarContacto(sc);
+                    break;
+                case 2:
+                    
+                    break;
+          
+                case 3:
+                    
+                    break;
 
+                case 4:
+                    
+                    break;
+
+                default:
+                System.out.println("Opción no válida. Por favor, intente de nuevo.");
+            }
+        } while (true);
     }
 }
