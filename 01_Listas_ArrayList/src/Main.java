@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class Main {
@@ -43,5 +44,26 @@ public class Main {
                 cadaProducto = iterar1.next();
                 System.out.println(cadaProducto.getNombre() + " " + cadaProducto.getCantidad());
             }
-    }
+
+            // Ordenar y muestra
+            
+        Collections.sort(productos);
+
+
+        System.out.println("--------------------------------------");
+            System.out.println("Productos despues de ordenar por nombre y cantidad: ");
+            for (Producto a : productos) {
+                System.out.println(a.getNombre() + " " + a.getCantidad());
+            }
+
+        productos.clear();
+        System.out.println("--------------------------------------");
+            System.out.println("Productos despues de limpieza: ");
+            if (productos.isEmpty()) {
+                System.out.println("No hay productos.");
+            } else {
+                System.out.println("No se encuentran productos.");
+            }
+
+     }
 }
