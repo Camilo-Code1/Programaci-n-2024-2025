@@ -1,4 +1,5 @@
 
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -35,18 +36,33 @@ public class Main{
                 }
             }
         // Muestra
-            System.out.println("Productos después de eliminar algunos: ");
+            System.out.println("\nProductos después de eliminar algunos: ");
                 for (Producto n : productos) {
                     System.out.println(n.getNombre() + " " + n.getCantidad());
                     }
 
         // Insertar dato
-            productos.add(new Producto("Esclavo tier 6", 70));
-            for (Producto n : productos) {
-                System.out.println(n.getNombre() + " " + n.getCantidad());
-                }
+            Producto p6 = new Producto("Esclavo tier 6", 70);
+            productos.add(2, p6);
+            System.out.println("\nProductos después de insertar un nuevo producto con iterator: ");
+         
+            // Muestra de datos con iterator           
+            Iterator <Producto> iterar1 = productos.iterator();
+            while (iterar1.hasNext()) {
+                Producto cadaProducto1 = iterar1.next();
+                System.out.println(cadaProducto1.getNombre() + " " + cadaProducto1.getCantidad());
+            }
 
-        }
+            // Ordenar lista por nombre
+            Collections.sort(productos);
+            System.out.println("Productos ordenados segun su nombre y su cantidad: ");
+        for (Producto a : productos) {
+            System.out.println(productos);
+            break;
+
+            // LinkedList.clear();
+
 
     }
-
+    }
+}
