@@ -55,14 +55,22 @@ public class Main{
 
             // Ordenar lista por nombre
             Collections.sort(productos);
-            System.out.println("Productos ordenados segun su nombre y su cantidad: ");
+            System.out.println("\nProductos ordenados segun su nombre y su cantidad: ");
         for (Producto a : productos) {
             System.out.println(productos);
             break;
-
-            // LinkedList.clear();
-
+    }
+    
+    productos.clear();
+    System.out.println("\nProductos despues de eliminar");
+    if (productos.isEmpty()) {
+      System.out.println("\nNo hay productos");
+    } else {
+      productos.clear();
+      System.out.println("\nSe eliminaron los productos");
+    }
 
     }
-    }
+
+
 }
