@@ -10,15 +10,24 @@ public class Coche {
     public String getcolor(){
         return color;
     }
-    public String getmarca(){
+    public String setmarca(){
         return marca;
     }
 
+
+
+    public void setcolor(String color){
+        this.color=color;
+    }
+    public void setMarca (String marca){
+        this.marca=marca;
+    }
+    
+
     @Override
     public String toString() {
-        return String.format("Marca: %s, Color: %s", marca, color);
+        return ("\nCoche:" + "\nSu Color es: " + color + "\nSu Marca es: " + marca);
     }
-
 
 
 
