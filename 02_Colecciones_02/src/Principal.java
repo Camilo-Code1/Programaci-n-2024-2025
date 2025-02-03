@@ -5,20 +5,27 @@ public class Principal {
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
             Agenda agenda = new Agenda();
+
+
+            String menu = "\nSeleccione una opcion:\r\n" + //
+                                "\n1. Añadir contacto.\r\n" + //
+                                "2. Buscar contacto.\r\n" + //
+                                "3. Eliminar contacto.\r\n" + //
+                                "4. Listar contactos.\r\n" + //
+                                "5. Numero de contactos\r\n" + //
+                                "6. Salir.";
             String opcion = "";
             String nombreFormateado = "";
-            System.out.println("-----Bienvenido-----");
-                System.out.println("Seleccione una opcion:");
+
+
+            System.out.println("");
+            System.out.println("----- Bienvenido -----");
+                
             do {
                
              
-                System.out.println("-------------------------------");
-                System.out.println("1. Añadir contacto.");
-                System.out.println("2. Buscar contacto.");
-                System.out.println("3. Eliminar contacto.");
-                System.out.println("4. Listar contactos.");
-                System.out.println("5. Listar Agenda");
-                System.out.println("6. Salir.");
+                System.out.println("\n-------------------------------");
+                System.out.println(menu);
                 System.out.println("-------------------------------");
                 opcion = scanner.nextLine();
     
@@ -33,13 +40,13 @@ public class Principal {
                                       
                         String telefono = "";
                         do {
-                            System.out.print("Ingrese el teléfono: ");
+                            System.out.print("Ingrese el teléfono: (Solo se admiten numeros personales, de servicios y numeros fijos) ");
                             telefono = scanner.nextLine(); 
                         } while (!Contacto.validarMovilER(telefono) == true);
                         
                        String correo = "";
                         do {
-                           System.out.println("Ingrese el correo: ");
+                           System.out.println("Ingrese el correo: (Formato: XXXXXXXXXX@XXXXXXX.XXXX) ");
                             correo = scanner.nextLine();
                         } while (!Contacto.validaEmail(correo) == true);    
                         
@@ -69,7 +76,7 @@ public class Principal {
                     agenda.numeroContactos();
                         break;
                     case "6":
-                    System.out.println("Hasta la vista...");
+                    System.out.println("Espere por favor, cerrando agenda.");
                         break;
                     default:
                         System.out.println("Opción no válida. Intente de nuevo.");
