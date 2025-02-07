@@ -3,30 +3,30 @@ import java.util.Scanner;
 public class A4 {
     public static void main(String[] args) {
 
+        try (Scanner scanner = new Scanner(System.in)) {
+          
+            int valor; 
 
+            System.out.println("Por favor ingrese un valor: ");
+            valor = scanner.nextInt();
 
-        Scanner scanner = new Scanner(System.in);
-        A4 A4_Metodos = new A4();
-
-        int valor; 
-
-        System.out.println("Por favor ingrese un valor: ");
-        valor = scanner.nextInt();
-
-        try {
-            verificarPositivo(valor);
-        } catch (ValorInvalidoException e) {
-            System.out.println("Excepcion atrapada: " + e.getMessage());
-        }
-        
-        try {
-            verificarNegativo(valor);
-        } catch (ValorInvalidoException e) {
-            System.out.println("Excepcion atrapada: " + e.getMessage());
+            try {
+                verificarPositivo(valor);
+            } catch (ValorInvalidoException e) {
+                System.out.println("Excepcion atrapada: " + e.getMessage());
+            }
+            
+            try {
+                verificarNegativo(valor);
+            } catch (ValorInvalidoException e) {
+                System.out.println("Excepcion atrapada: " + e.getMessage());
+            }
         }
 
     }
 
+
+    
     public static void verificarPositivo(int valor) throws ValorInvalidoException {
         if (valor < 0) {
             throw new ValorInvalidoException("El " + valor + " no es positivo");
