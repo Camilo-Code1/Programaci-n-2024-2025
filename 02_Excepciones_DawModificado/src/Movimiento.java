@@ -21,16 +21,10 @@ import java.time.format.DateTimeFormatter;
 
 
 
-        // Posible forma de mostrar movimientos
-
-        // public void mostrarInfoMovimiento() {
-        //     System.out.println("\nID: " + ID + ", Fecha: " + Fecha + ", Tipo: " + Tipo + ", Cantidad: \n" + Cantidad);
-        // }
-
 
         @Override
         public String toString() {
-            return "Movimiento [ID=" + ID + ", Fecha=" + Fecha + ", Tipo=" + Tipo + ", Cantidad=" + Cantidad + "]";
+            return "Movimiento ID: " + ID + " Fecha: " + Fecha + " Tipo: " + Tipo + " Cantidad: " + Cantidad + " $";
         }
 
     } // MAIN

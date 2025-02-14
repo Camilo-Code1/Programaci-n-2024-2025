@@ -1,14 +1,12 @@
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class Persona {
     
     String nombre;
     String DNI;
-    LocalDate fechaNacimiento;
+    String fechaNacimiento;
 
-    public Persona(String nombre, String DNI, LocalDate fechaNacimiento) {
+    public Persona(String nombre, String DNI, String fechaNacimiento) {
         this.nombre = nombre;
         this.DNI = DNI;
         this.fechaNacimiento = fechaNacimiento;
@@ -29,8 +27,7 @@ public class Persona {
   
 
     public String getFechaNacimiento() {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd:MM:yyyy");
-        return fechaNacimiento.format(formatter);
+        return fechaNacimiento;
     }
 
     

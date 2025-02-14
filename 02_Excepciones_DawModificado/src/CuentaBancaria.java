@@ -8,8 +8,9 @@ public class CuentaBancaria {
     private static final double limite_hacienda = 3000;
 
     private String IBAN;
-    private String Titular;
+    Cliente cliente;
     private double Saldo;
+  
 
     // Colección de movimientos
 
@@ -18,10 +19,10 @@ public class CuentaBancaria {
 
     // CONSTRUCTROR
 
-    public CuentaBancaria(String IBAN, String Titular) { 
-        if (ibanCorrec(IBAN) && !Titular.isEmpty()) {        
+    public CuentaBancaria(String IBAN, Cliente cliente) { 
+        if (ibanCorrec(IBAN) && cliente != null && !cliente.getNombre().isEmpty()) {        
             this.IBAN = IBAN;
-            this.Titular = Titular;
+            this.cliente = cliente;
             this.Saldo = 0;
             this.Movimientos = new ArrayList<>(); 
             this.contadorMovimientos = 0; 
@@ -33,13 +34,13 @@ public class CuentaBancaria {
 
 
 
-    private boolean ibanCorrec(String IBAN) {
-        return IBAN != null && IBAN.matches("[A-Z]{2}\\d{22}");
-    }
+  
+
+
             
     public void mostrarDatos() {
         System.out.printf("IBAN: %s%n", IBAN);
-        System.out.printf("Titular: %s%n", Titular);
+        System.out.printf("Cliente: %s%n", cliente);
         System.out.printf("Saldo: %s%n", Saldo);
     }	
 
@@ -57,7 +58,7 @@ public class CuentaBancaria {
 
         Saldo += Cantidad;
         Movimientos.add(new Movimiento("INGRESO", Cantidad, Saldo));
-        // agregarMovimiento("Ingreso", Cantidad);
+       
     }
 
 
@@ -106,8 +107,6 @@ public class CuentaBancaria {
         }
     }
 
-
-
     public double getSaldo() {
         return Saldo;
     }
@@ -116,7 +115,19 @@ public class CuentaBancaria {
         return IBAN;
     }
 
-    public String getTitular() {
-        return Titular;
+    public Cliente getcliente() {
+        return cliente;
     }
+
+
+
+
+
+    private boolean ibanCorrec(String IBAN) {
+        return IBAN != null && IBAN.matches("[A-Z]{2}\\d{22}");
+    }
+
+
+    
+
 }

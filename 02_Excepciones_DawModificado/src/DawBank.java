@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class DawBank {
@@ -13,11 +12,30 @@ public class DawBank {
         System.out.println("Bienvenido a DawBank");
         System.out.println("(Presione intro para continuar)");
 
+        
         String IBAN = obtenerIbanValido(sc);
-        System.out.println("Ingrese el titular de la cuenta: ");
-        String titular = sc.nextLine();
+        
 
-        CuentaBancaria c1 = new CuentaBancaria(IBAN, titular);
+        System.out.println("Ingrese el nombre del cliente: ");
+        String nombre = sc.nextLine();
+
+        
+        String DNI = obtenerDNIValido(sc);
+
+        System.out.println("Inserte la fecha de nacimiento:");
+        String fechaNacimiento = sc.nextLine();
+
+        
+        String telefono = obtenerTelefonoValido(sc);
+
+        System.out.println("Inserte la dirección: ");
+        String direccion = sc.nextLine();
+
+        String email = obtenereEmailValido(sc);
+
+        Cliente cliente = new Cliente(nombre, DNI, fechaNacimiento, telefono, direccion, email);
+
+        CuentaBancaria c1 = new CuentaBancaria(IBAN, cliente);
         
 
         do {
@@ -40,7 +58,7 @@ public class DawBank {
                             "\r\n" + //
                             "1 - Datos de la cuenta\r\n" + //
                             "2 - IBAN\r\n" + //
-                            "3 - Titular\r\n" + //
+                            "3 - Cliente\r\n" + //
                             "4 - Saldo\r\n" + //
                             "5 - Ingreso\r\n" + //
                             "6 - Retirada\r\n" + //
@@ -76,7 +94,7 @@ public class DawBank {
 
                         case 3:
                             System.out.println("");
-                            System.out.println("Titular: " + cuenta.getTitular());
+                            System.out.println("Cliente: " + cuenta.getcliente());
                             System.out.println("");
 
                             break;
@@ -118,6 +136,12 @@ public class DawBank {
                     }
         }
 
+
+
+
+
+
+
         private static void realizarIngreso(CuentaBancaria cuenta, Scanner scanner) {
             System.out.println("Inserte la cantidad a ingresar: ");
             double cantidadIngreso = scanner.nextDouble();
@@ -130,6 +154,14 @@ public class DawBank {
             double cantidadRetirada = scanner.nextDouble();
             cuenta.Retirada(cantidadRetirada);
         }
+
+
+
+
+        
+
+        // Validadores
+
 
         private static String obtenerIbanValido(Scanner scanner){
             String IBAN = scanner.nextLine();
@@ -147,10 +179,70 @@ public class DawBank {
             return IBAN.matches("[A-Z]{2}\\d{22}");
         }
 
+
+
+
+        private static String obtenerDNIValido(Scanner scanner){
+            String DNI = scanner.nextLine();
+            while (true) {
+                System.out.println("Ingrese el DNI de la cuenta (Formato: XXXXXXXX-@): ");
+                DNI = scanner.nextLine();
+                if (validarDNI (DNI)) {
+                    return DNI;
+                    }
+                    System.out.println("DNI inválido. Por favor, inténtelo de nuevo");
+                    }
+        }
+
+        private static boolean validarDNI(String DNI) {
+            return DNI.matches("\\d{8}[A-Z]");
+            }
+
  
 
-    }
 
+
+        private static String obtenereEmailValido(Scanner scanner){
+            String email = scanner.nextLine();
+            while (true) {
+                System.out.println("Ingrese el email de la cuenta (Formato: ejemplo@dominio: ");
+                email = scanner.nextLine();
+                if (validarEmail(email)) {
+                    return email;
+                    }
+                    System.out.println("Email inválido. Por favor, inténtelo de nuevo");
+                    }
+            }
+
+
+        private static boolean validarEmail(String email) {
+            return email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+            }
+
+
+
+
+
+        private static String obtenerTelefonoValido (Scanner scanner){
+            String telefono = scanner.nextLine();
+            while (true) {
+                System.out.println("Ingrese el telefono de la cuenta (Formato: XXXXXXXXXX): ");
+                telefono = scanner.nextLine();
+                if (validarTelefono(telefono)) {
+                    return telefono;
+                }
+                System.out.println("Telefono inválido. Por favor, inténtelo de nuevo");
+            }
+        }
+
+
+        private static boolean validarTelefono(String telefono) {
+            return telefono.matches("\\d{9}");
+            }
+
+                }
+
+        
 
 
 
