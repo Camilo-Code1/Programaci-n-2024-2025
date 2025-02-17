@@ -1,10 +1,12 @@
 
 
+
+
 public class Persona {
     
     String nombre;
     String DNI;
-    String fechaNacimiento;
+    static String fechaNacimiento;
 
     public Persona(String nombre, String DNI, String fechaNacimiento) {
         this.nombre = nombre;
@@ -26,9 +28,4 @@ public class Persona {
 
   
 
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    
 }

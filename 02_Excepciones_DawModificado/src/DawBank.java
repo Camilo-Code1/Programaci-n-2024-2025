@@ -1,49 +1,48 @@
 import java.util.Scanner;
 
 public class DawBank {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
 
         int opcion;
-        Scanner sc = new Scanner(System.in);
-        CuentaBancaria cuenta;
-
-
-        System.out.println("Bienvenido a DawBank");
-        System.out.println("(Presione intro para continuar)");
-
-        
-        String IBAN = obtenerIbanValido(sc);
-        
-
-        System.out.println("Ingrese el nombre del cliente: ");
-        String nombre = sc.nextLine();
-
-        
-        String DNI = obtenerDNIValido(sc);
-
-        System.out.println("Inserte la fecha de nacimiento:");
-        String fechaNacimiento = sc.nextLine();
-
-        
-        String telefono = obtenerTelefonoValido(sc);
-
-        System.out.println("Inserte la dirección: ");
-        String direccion = sc.nextLine();
-
-        String email = obtenereEmailValido(sc);
-
-        Cliente cliente = new Cliente(nombre, DNI, fechaNacimiento, telefono, direccion, email);
-
-        CuentaBancaria c1 = new CuentaBancaria(IBAN, cliente);
-        
-
-        do {
-            opcion = MostrarMenu(sc);
-            procesarOpcion(opcion, c1, sc);
-        } while (opcion != 8);
-
-        sc.close();
+        try (Scanner sc = new Scanner(System.in)) {
+            CuentaBancaria cuenta;
+            
+            
+            System.out.println("Bienvenido a DawBank");
+            System.out.println("(Presione intro para continuar)");
+            
+            
+            String IBAN = obtenerIbanValido(sc);
+            
+            
+            System.out.println("Ingrese el nombre del cliente: ");
+            String nombre = sc.nextLine();
+            
+            
+            String DNI = obtenerDNIValido(sc);
+            
+            System.out.println("Inserte la fecha de nacimiento:");
+            String fechaNacimiento = sc.nextLine();
+            
+            
+            String telefono = obtenerTelefonoValido(sc);
+            
+            System.out.println("Inserte la dirección: ");
+            String direccion = sc.nextLine();
+            
+            String email = obtenereEmailValido(sc);
+            
+            Cliente cliente = new Cliente(nombre, DNI, fechaNacimiento, telefono, direccion, email);
+            
+            CuentaBancaria c1 = new CuentaBancaria(IBAN, cliente);
+            
+            
+            do {
+                opcion = MostrarMenu(sc);
+                procesarOpcion(opcion, c1, sc);
+            } while (opcion != 8);
+        }
 
     }
 
@@ -145,15 +144,36 @@ public class DawBank {
         private static void realizarIngreso(CuentaBancaria cuenta, Scanner scanner) {
             System.out.println("Inserte la cantidad a ingresar: ");
             double cantidadIngreso = scanner.nextDouble();
+
+            try {
             cuenta.Ingreso(cantidadIngreso);
+            cuenta.verificarLimite(cantidadIngreso);
+            } catch (AvisarHaciendaException e) {
+                System.err.println("AVISO: Limite de 3000 euros alcanzados. Hacienda ha sido informada.");
+                System.err.println("Error: " + e.getMessage());
+                e.printStackTrace();
+            }
         }
 
 
         private static void realizarRetirada(CuentaBancaria cuenta, Scanner scanner) {
             System.out.println("Inserte la cantidad a retirar: ");
             double cantidadRetirada = scanner.nextDouble();
+
+            try {
             cuenta.Retirada(cantidadRetirada);
+            
+            } catch (SaldoNegativoException e) {
+                System.err.println("AVISO: Saldo inferior o igual a -50€.");
+                System.err.println("Error: " + e.getMessage());
+                e.printStackTrace();
+            }
         }
+
+
+
+
+
 
 
 
@@ -164,7 +184,7 @@ public class DawBank {
 
 
         private static String obtenerIbanValido(Scanner scanner){
-            String IBAN = scanner.nextLine();
+            String IBAN;
             while (true) {
                 System.out.println("Ingrese el IBAN de la cuenta (Formato: XX0000000000000000000000): ");
                 IBAN = scanner.nextLine();
@@ -183,7 +203,7 @@ public class DawBank {
 
 
         private static String obtenerDNIValido(Scanner scanner){
-            String DNI = scanner.nextLine();
+            String DNI;
             while (true) {
                 System.out.println("Ingrese el DNI de la cuenta (Formato: XXXXXXXX-@): ");
                 DNI = scanner.nextLine();
@@ -203,9 +223,9 @@ public class DawBank {
 
 
         private static String obtenereEmailValido(Scanner scanner){
-            String email = scanner.nextLine();
+            String email;
             while (true) {
-                System.out.println("Ingrese el email de la cuenta (Formato: ejemplo@dominio: ");
+                System.out.println("Ingrese el email de la cuenta (Formato: ejemplo@dominio.com)");
                 email = scanner.nextLine();
                 if (validarEmail(email)) {
                     return email;
@@ -224,7 +244,7 @@ public class DawBank {
 
 
         private static String obtenerTelefonoValido (Scanner scanner){
-            String telefono = scanner.nextLine();
+            String telefono;
             while (true) {
                 System.out.println("Ingrese el telefono de la cuenta (Formato: XXXXXXXXXX): ");
                 telefono = scanner.nextLine();

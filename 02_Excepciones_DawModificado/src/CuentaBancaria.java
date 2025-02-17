@@ -31,12 +31,7 @@ public class CuentaBancaria {
         }
     }
 
-
-
-
   
-
-
             
     public void mostrarDatos() {
         System.out.printf("IBAN: %s%n", IBAN);
@@ -45,17 +40,14 @@ public class CuentaBancaria {
     }	
 
 
+  
 
     public void Ingreso(double Cantidad) {
         if (Cantidad <= 0) {
             System.out.println("\sLa cantidad ingresada debe ser mayor a 0");
             return;
         }
-        
-        if (Cantidad > limite_hacienda) {
-            System.out.println("\sAVISO: El ingreso supera el limite de la hacienda");
-        }
-
+       
         Saldo += Cantidad;
         Movimientos.add(new Movimiento("INGRESO", Cantidad, Saldo));
        
@@ -63,7 +55,7 @@ public class CuentaBancaria {
 
 
 
-    public void Retirada(double cantidad) {
+    public void Retirada(double cantidad) throws SaldoNegativoException {
         if (cantidad <= 0) {
             System.out.println("\sLa cantidad debe ser mayor a 0.");
             return;
@@ -75,25 +67,12 @@ public class CuentaBancaria {
         
         Saldo -= cantidad;
         Movimientos.add(new Movimiento("RETIRADA", cantidad, Saldo));
-        // agregarMovimiento("Retirada", cantidad);
 
-        if (Saldo <= 0) {
-            System.out.println("\sAVISO: Saldo negativo.");
+        if (Saldo < 0) {
+           throw new SaldoNegativoException ("\sAVISO: Saldo negativo");
         }
     }
         
-
-
-    // public void agregarMovimiento(String tipo, double cantidad) {
-    //     if (contadorMovimientos >= 100) {
-    //        System.out.println("\sNo se pueden realizar más movimientos");
-    //        return;
-    //     }
-
-    //     Movimientos.add(contadorMovimientos, new Movimiento(tipo, cantidad, Saldo));
-    //     contadorMovimientos++;
-    // }
-
 
 
     public void MostrarMovimientos() {
@@ -129,5 +108,31 @@ public class CuentaBancaria {
 
 
     
+
+
+
+        /// EXCEPCIONES
+        
+
+        public void verificarLimite(double Cantidad) throws AvisarHaciendaException {
+            if (Cantidad >= limite_hacienda) {
+                throw new AvisarHaciendaException("La cantidad supera el límite establecido por Hacienda");
+        }
+    }
+
+
+    //     public void verificarCantidadMinima(double Cantidad) throws SaldoNegativoException {
+    //         if (Cantidad < 0) {
+                
+    //             if (Saldo - Cantidad < -50) {
+    //                 throw new SaldoNegativoException("\sMovimiento no permitido. No hay suficiente saldo en la cuenta.");
+                
+    //             }
+           
+    // }
+              
+    
+    //     }
+
 
 }
