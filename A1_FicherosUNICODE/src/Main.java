@@ -1,7 +1,8 @@
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
@@ -16,70 +17,98 @@ public class Main {
                         "3. Eliminar producto por codigo\r\n" + //
                         "4. Guardar productos en el fichero\r\n" + //
                         "5. Salir";
+      
+        int opcion = 0;
 
+        
 
-                       
+        do { 
 
+            System.out.println("-----------------------------------------------------------------");
+            System.out.println(menu);
+            System.out.println("-----------------------------------------------------------------");
 
+            opcion = sc.nextInt();
 
-
-
-        // INSERTAR INFORMACION
-
-        // try (FileWriter Archivo = new FileWriter("C:\\Users\\daw1.COMPU-S025\\Desktop\\imagew\\Archi2.txt", true); BufferedWriter Escritor = new BufferedWriter(Archivo); ) {
-        //     Escritor.write("Tonto el que lo lea");
-        //     Escritor.newLine();
-        //     Escritor.write("addddddddddddddddddddddddddddddaaaaaaaaaaaaaaaaaa");
             
+        switch (opcion) {
+            case 1:
+            agregarInformación();
+            break;
 
-        // } catch (IOException e) {
-        //     System.out.println("Error: " + e.getMessage());
-        // }
+            case 2:
+            leerContenido();
+            break;
 
-        // List<Producto> productos = new LinkedList<>();
-
-        // // Lectura de fichero
-
-        // try (FileReader Archivo = new FileReader("C:\\Users\\daw1.COMPU-S025\\Desktop\\imagew\\Archi2.txt") ; BufferedReader Lector = new BufferedReader(Archivo); ) {
-        //     String linea = Lector.readLine();
-        //     while (linea != null) {
-
-        //         String[] espacio = linea.split(",");
-        //         Producto p = new Producto(espacio[0], espacio[1], Integer.parseInt(espacio[2]), Integer.parseInt(espacio[3]));
-
-        //         productos.add(p);
-
-        //         linea = Lector.readLine();                
-
-        //     }
-
-        // } catch (IOException e) { 
-        //     System.out.println("Error 2: " + e.getMessage());
-        // }
-
-        // for (Producto linea : productos) {
-        //     System.out.println(linea);
-        // } 
-
-
-    try {
-        System.out.println("Insete nsdk fkadsn el mnbonawern: ");
-        String nombrePrue = sc.nextLine();
-        String salida = "C:\\Users\\daw1.COMPU-S025\\Desktop\\imagew\\Archivo.txt";
-        FileInputStream ficher = new FileInputStream(salida + nombrePrue + ".txt");
-        InputStreamReader osw = new InputStreamReader(ficher);
-        BufferedReader br = new BufferedReader(osw);
-        while (br.ready()) {
-            String lin = br.readLine();
-            System.out.println(lin);
+            case 3:
+            System.out.println("Saliendo del programa");
+            break;
         }
 
-    } catch (FileNotFoundException e) {
-        System.out.println("Error 3: " + e.getMessage());
-    }
-    catch (IOException e) {
-        System.out.println("Error 4: " + e.getMessage());
+
+        
+
+    } while (opcion != 3);
+
+    
+    
+}
+
+    static Scanner sc = new Scanner(System.in); 
+    
+    public static void agregarInformación() throws IOException {
+    
+            System.out.println("Ingrese la información que desea agregar: ");
+            String datosNuevos = sc.nextLine();
+        
+        try (FileWriter Archivo = new FileWriter("C:\\Users\\daw1.COMPU-S025\\Desktop\\imagew\\Archi2.txt", true); 
+        BufferedWriter Escritor = new BufferedWriter(Archivo); ) {
+
+            for (Producto producto : producto) {
+
+            }
+
+            // Escritor.write(datosNuevos);
+            // Escritor.newLine();
+            
+        } System.out.println("Información añadida con exito");
     }
 
+
+    public static  void leerContenido() throws IOException {
+
+        String Archivo = "C:\\Users\\daw1.COMPU-S025\\Desktop\\imagew\\Archi2.txt";
+
+
+        try (
+            // FileReader Archivo = new FileReader("C:\\Users\\daw1.COMPU-S025\\Desktop\\imagew\\Archi2.txt");
+        FileInputStream ficher = new FileInputStream(Archivo);
+        InputStreamReader lector = new InputStreamReader(ficher);
+        BufferedReader Leer = new BufferedReader(lector); ) {
+            System.out.println("Contenido del archivo: ");
+
+           
+                String lin;
+                while ((lin = Leer.readLine()) != null) {
+                    System.out.println(lin);
+            }
+
+    }
+
+    }
+
+    public void añadirProducto(){
+    System.out.println("Ingrese el codigo del producto: ");
+    String cod = sc.nextLine();
+    System.out.println("Nombre del producto: ");
+    String nombre = sc.nextLine();
+    System.out.println("Cantidad del producto: ");
+    int cantidad = sc.nextInt();
+    System.out.println("Precio del producto: ");
+    int precio = sc.nextInt();
+
+    Producto productos = new Producto(cod, nombre, cantidad, precio);
+    // Producto.add(productos);
+    }
 }
-}
+

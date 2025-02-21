@@ -1,5 +1,4 @@
 
-
 public class Producto {
 
     String cod;
@@ -67,8 +66,7 @@ public class Producto {
         return sb.toString();
     }
 
-    
 
-    
-
+ 
 }
+
