@@ -3,7 +3,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
+
+        Producto.cargarInformacion();
 
         Scanner sc = new Scanner(System.in);
         
@@ -30,19 +32,19 @@ public class Main {
             
         switch (opcion) {
             case 1:
-            Productos.añadirProducto();
+            Producto.agregarProducto();
             break;
 
             case 2:
-            Productos.leerContenido();
+            Producto.mostrarProductos();
             break;
 
             case 3: 
-            Productos.eliminarProducto();
+            Producto.eliminarProducto();
             break;
 
             case 4:
-            Productos.guardarInformación();
+            Producto.guardarInformación();
             break;
 
             case 5: 
@@ -57,8 +59,7 @@ public class Main {
 
     } while (opcion != 5);
 
-    
-    
+
 }
 
 }
