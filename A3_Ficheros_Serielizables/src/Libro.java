@@ -1,13 +1,14 @@
 import java.io.Serializable;
+import java.time.LocalDate;
 
  public class Libro implements Serializable {
     private static final long serialVersionUID = 1L;
     private String isbn; // 13 digitos
     private String titulo;
     private String autor;
-    private int fechaPublicacion;
+    private LocalDate fechaPublicacion;
 
-    public Libro(String isbn2, String titulo, String autor, int fechaPublicacion) {
+    public Libro(String isbn2, String titulo, String autor, LocalDate fechaPublicacion) {
         this.isbn = isbn2;
         this.titulo = titulo;
         this.autor = autor;
@@ -59,15 +60,8 @@ import java.io.Serializable;
 
 
 
-    public int getFechaPublicacion() {
+    public LocalDate getFechaPublicacion() {
         return fechaPublicacion;
-    }
-
-
-
-
-    public void setFechaPublicacion(int fechaPublicacion) {
-        this.fechaPublicacion = fechaPublicacion;
     }
 
 

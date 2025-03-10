@@ -4,6 +4,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -12,7 +15,7 @@ import java.util.regex.Pattern;
 
 public class Main {
     private static List<Libro> libros = new ArrayList<>(); // lista de libros
-    private static Scanner sc = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
 
     
 
@@ -25,8 +28,9 @@ public class Main {
                       "4. Guardar libro \r\n" +
                       "5. Guardar y salir";
 
-        do {
+        do {            
             try {
+                Scanner sc = new Scanner(System.in);
                 System.out.println("-----------------------------------------------------------------");
                 System.out.println(menu);
                 System.out.println("-----------------------------------------------------------------");
@@ -60,6 +64,7 @@ public class Main {
                 }
 
             } catch (InputMismatchException e) {
+                Scanner sc = new Scanner(System.in);
                 System.out.println("Error: Debe introducir un valor numérico");
                 sc.next(); // Limpiar el buffer
             }
@@ -67,12 +72,15 @@ public class Main {
     }
 
     public static void crearLibro() {
+        Scanner sc = new Scanner(System.in);
         String isbn;
         boolean isbnUnico;
+        LocalDate fechaPublicacion = null;
+        
                 do {
                     System.out.println("Inserte el ISBN del libro (No se pueden repetir, formato x-xxxxxx-xxxxxx): ");
-                   isbn = sc.next(); // Cambiar a String
-                    isbnUnico = validarISBN(isbn) && !isbnExistente(isbn); // Validar formato y verificar unicidad
+                   isbn = sc.next(); 
+                    isbnUnico = validarISBN(isbn) && !isbnExistente(isbn); 
     
             if (!isbnUnico) {
                 System.out.println("ISBN no aceptado o ya existe. Intente de nuevo.");
@@ -84,22 +92,31 @@ public class Main {
     
         System.out.println("Inserte el nombre del autor del libro: ");
         String autor = sc.next();
+
+
+        
+        while (fechaPublicacion == null) {
     
-        System.out.println("Ingrese la fecha de publicación del libro: ");
-        int fechaPublicacion = sc.nextInt();
-    
-        libros.add(new Libro(isbn, titulo, autor, fechaPublicacion)); // Asegúrate de que el constructor de Libro acepte String para ISBN
-        System.out.println("Información guardada con éxito");
+        System.out.println("Ingrese la fecha de publicación del libro (dd/MM/yyyy): ");
+        String fechaSinProcesar = sc.next();
+        try {
+            fechaPublicacion = LocalDate.parse(fechaSinProcesar, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+    } catch (DateTimeParseException e) {
+        System.out.println("Fecha invalida");
+    }
+    }
+        libros.add(new Libro(isbn, titulo, autor, fechaPublicacion)); 
+        System.out.println("\n¡Información guardada con éxito!");
     }
     
 
     public static void guardarInfor() {
-        try (FileOutputStream archi = new FileOutputStream("src\\Resources\\Biblioteca.dat", false);
+        try (FileOutputStream archi = new FileOutputStream(".\\Resources\\Biblioteca.dat", false);
              ObjectOutputStream oos = new ObjectOutputStream(archi)) {
             for (Libro libro : libros) {
                 oos.writeObject(libro);
             }
-            System.out.println("Información guardada con éxito");
+            System.out.println("\n¡Información guardada con éxito!");
         } catch (IOException e) {
             System.out.println("Error al guardar la información: " + e.getMessage());
         }
@@ -107,14 +124,15 @@ public class Main {
 
     public static void lecturaArchivo() {
         libros.clear(); // Limpiar la lista antes de leer
-        try (FileInputStream archi = new FileInputStream("src\\Resources\\Biblioteca.dat");
+        try (FileInputStream archi = new FileInputStream(".\\Resources\\Biblioteca.dat");
              ObjectInputStream reader = new ObjectInputStream(archi)) {
             while (true) { // Bucle infinito, se romperá con EOFException
                 Libro aLibro = (Libro) reader.readObject();
                 libros.add(aLibro);
             }
         } catch (EOFException e) {
-            System.out.println("Información leída con éxito");
+            System.out.println("\nLeyendo archivo...");
+            System.out.println("");
         } catch (IOException e) {
             System.out.println("Error al leer la información: " + e.getMessage());
         } catch (ClassNotFoundException e) {
@@ -128,6 +146,7 @@ public class Main {
     }
 
     public static void eliminarLibro() {
+        Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese el ISBN del libro a eliminar: ");
         String isbn = sc.next();
 
@@ -138,7 +157,7 @@ public class Main {
             
                 libros.remove(i);
                 libroEncontrado = true;
-                System.out.println("Producto eliminado con exito");
+                System.out.println("\n¡El libro ha sido eliminado con exito!");
                 break;
             }
         }
