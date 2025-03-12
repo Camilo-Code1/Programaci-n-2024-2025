@@ -8,8 +8,8 @@ import java.time.LocalDate;
     private String autor;
     private LocalDate fechaPublicacion;
 
-    public Libro(String isbn2, String titulo, String autor, LocalDate fechaPublicacion) {
-        this.isbn = isbn2;
+    public Libro(String isbn, String titulo, String autor, LocalDate fechaPublicacion) {
+        this.isbn = isbn;
         this.titulo = titulo;
         this.autor = autor;
         this.fechaPublicacion = fechaPublicacion;
