@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -14,7 +13,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		//path a la carpeta Recursos del proyecto
-		final String pathFile = "./src/Recursos/";
+		final String pathFile = "./src/Recursos/"; 
 		
 		//Nombre del fichero Binario
 		final String fileNameBinario = "almacen.dat";
@@ -40,11 +39,11 @@ public class Main {
 		for(int i =0; i < productos.length; i++) {
 			productos[i].setCantidad(productos2[i].getCantidad());
 		}
+
 		
 		//prueba
 		
-		
-		
+				
 		int i = 0;
 		
 		//Lectura de fichero binario
@@ -67,7 +66,7 @@ public class Main {
 				
 				
 				
-				productosLeidos.get(i).setCantidad(cantidad);
+				// productosLeidos.get(i).setCantidad(cantidad);
 				productosLeidos.get(i).setPrecio(precio);
 				productosLeidos.get(i).setDescuento(descuento);
 				productosLeidos.get(i).setIVA(IVA);
@@ -110,6 +109,9 @@ public class Main {
 	}//main
 
 	
+	
+
+
 	private static LinkedList<Producto> leerFicheroUnicode(final String pathFile, String fileName) {
 		LinkedList<Producto> lineas = null;
 		if(pathFile != null && fileName != null)
@@ -126,13 +128,12 @@ public class Main {
 						if(linea != null) {
 							
 							String [] elementos = linea.split("/");
-							Producto p = 
-									new Producto(elementos[0], elementos[2], elementos[3]);
+							// Producto producto = new Producto(elementos[0], elementos[2], elementos[3], Integer.parseInt(elementos[3]), elementos[5], elementos[6], elementos[7], elementos[8]);
 							
 							
 							
 							
-							lineas.add(p);
+							// lineas.add(p);
 							
 						}
 
@@ -156,26 +157,26 @@ public class Main {
 				DataOutputStream escritor = new DataOutputStream(fichero);)
 		{
 			
-			Producto p1 = new Producto(5,25.75,15,21,false);
-			Producto p2 = new Producto(15,55.95,5,21,true);
-			Producto p3 = new Producto(100,3.25,0,21,false);
-			Producto p4 = new Producto(300,0.95,0,21,false);
-			Producto p5 = new Producto(27,5.25,13,21,true);
+			// Producto p1 = new Producto(5,25.75,15,21,false);
+			// Producto p2 = new Producto(15,55.95,5,21,true);
+			// Producto p3 = new Producto(100,3.25,0,21,false);
+			// Producto p4 = new Producto(300,0.95,0,21,false);
+			// Producto p5 = new Producto(27,5.25,13,21,true);
 			
 			
 			LinkedList<Producto> productos = new LinkedList<Producto>();
 			
-			productos.add(p1);
-			productos.add(p2);
-			productos.add(p3);
-			productos.add(p4);
-			productos.add(p5);
+			// productos.add(p1);
+			// productos.add(p2);
+			// productos.add(p3);
+			// productos.add(p4);
+			// productos.add(p5);
 			
 			
 			for(Producto p : productos)
 			{
 
-				escritor.writeInt(p.getCantidad());
+				// escritor.writeInt(p.getCantidad());
 				escritor.writeDouble(p.getPrecio());
 				escritor.writeInt(p.getDescuento());
 				escritor.writeInt(p.getIVA());

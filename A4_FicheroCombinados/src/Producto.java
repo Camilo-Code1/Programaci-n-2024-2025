@@ -1,91 +1,158 @@
 public class Producto {
 
     String referencia;
+    String nombre;
     String descripcion;
+    String cantidad;
     String tipo;
-    int cantidad;
+
     double precio;
     int descuento;
-    int iva;
-    boolean aplicarDTO;
+    int IVA;
+    boolean aplicarDto;
 
 
-public Producto(String referencia, String descripcion, String tipo, int cantidad, double precio, int descuento, int iva, boolean aplicarDTO) {
 
-    this.referencia = referencia;
-    this.descripcion = descripcion;
-    this.tipo = tipo;
-    this.cantidad = cantidad;
-    this.precio = precio;
-    this.descuento = descuento;
-    this.iva = iva;
-    this.aplicarDTO = aplicarDTO;
 
-}
+    public Producto(String referencia, String nombre, String descripcion, String cantidad, String tipo, double precio,
+            int descuento, int iVA, boolean aplicarDto) {
+        this.referencia = referencia;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.cantidad = cantidad;
+        this.tipo = tipo;
+        this.precio = precio;
+        this.descuento = descuento;
+        IVA = iVA;
+        this.aplicarDto = aplicarDto;
+    }
+
+
+
 
     public String getReferencia() {
         return referencia;
     }
 
+
+
+
     public void setReferencia(String referencia) {
         this.referencia = referencia;
     }
+
+
+
+
+    public String getNombre() {
+        return nombre;
+    }
+
+
+
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+
+
 
     public String getDescripcion() {
         return descripcion;
     }
 
+
+
+
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+
+
+
+    public String getCantidad() {
+        return cantidad;
+    }
+
+
+
+
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
+    }
+
+
+
 
     public String getTipo() {
         return tipo;
     }
 
+
+
+
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
-    public int getCantidad() {
-        return cantidad;
-    }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
+
 
     public double getPrecio() {
         return precio;
     }
 
+
+
+
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+
+
+
 
     public int getDescuento() {
         return descuento;
     }
 
+
+
+
     public void setDescuento(int descuento) {
         this.descuento = descuento;
     }
 
-    public int getIva() {
-        return iva;
+
+
+
+    public int getIVA() {
+        return IVA;
     }
 
-    public void setIva(int iva) {
-        this.iva = iva;
+
+
+
+    public void setIVA(int iVA) {
+        IVA = iVA;
     }
 
-    public boolean isAplicarDTO() {
-        return aplicarDTO;
+
+
+
+    public boolean isAplicarDto() {
+        return aplicarDto;
     }
 
-    public void setAplicarDTO(boolean aplicarDTO) {
-        this.aplicarDTO = aplicarDTO;
+
+
+
+    public void setAplicarDto(boolean aplicarDto) {
+        this.aplicarDto = aplicarDto;
     }
+
 
     
     @Override
@@ -93,19 +160,20 @@ public Producto(String referencia, String descripcion, String tipo, int cantidad
         StringBuilder sb = new StringBuilder();
         sb.append("Producto{");
         sb.append("referencia=").append(referencia);
+        sb.append(", nombre=").append(nombre);
         sb.append(", descripcion=").append(descripcion);
-        sb.append(", tipo=").append(tipo);
         sb.append(", cantidad=").append(cantidad);
+        sb.append(", tipo=").append(tipo);
         sb.append(", precio=").append(precio);
         sb.append(", descuento=").append(descuento);
-        sb.append(", iva=").append(iva);
-        sb.append(", aplicarDTO=").append(aplicarDTO);
+        sb.append(", IVA=").append(IVA);
+        sb.append(", aplicarDto=").append(aplicarDto);
         sb.append('}');
         return sb.toString();
     }
 
-
-
+    
+    
 
     
 
