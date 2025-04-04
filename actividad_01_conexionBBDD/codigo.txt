@@ -1,0 +1,26 @@
+CREATE USER 'developer'@'localhost' IDENTIFIED BY 'developer';
+
+GRANT ALL PRIVILEGES ON BD_Programacion_Developer TO 'developer'@'localhost';
+
+DROP DATABASE IF EXISTS BD_Programacion_Developer;
+CREATE DATABASE BD_Programacion_Developer;
+USE BD_Programacion_Developer;
+
+create table MOCK_DATA (
+	id INT,
+	first_name VARCHAR(50),
+	last_name VARCHAR(50),
+	email VARCHAR(50),
+	gender VARCHAR(50),
+	country VARCHAR(50)
+);
+insert into MOCK_DATA (id, first_name, last_name, email, gender, country) values (1, 'Moria', 'Nickolls', 'mnickolls0@github.com', 'Female', 'China');
+insert into MOCK_DATA (id, first_name, last_name, email, gender, country) values (2, 'Karalee', 'Shills', 'kshills1@psu.edu', 'Female', 'Morocco');
+insert into MOCK_DATA (id, first_name, last_name, email, gender, country) values (3, 'Roch', 'Mudie', 'rmudie2@lycos.com', 'Female', 'China');
+insert into MOCK_DATA (id, first_name, last_name, email, gender, country) values (4, 'Bron', 'Sketcher', 'bsketcher3@digg.com', 'Male', 'Indonesia');
+insert into MOCK_DATA (id, first_name, last_name, email, gender, country) values (5, 'Thaddus', 'Giabuzzi', 'tgiabuzzi4@barnesandnoble.com', 'Male', 'Hungary');
+insert into MOCK_DATA (id, first_name, last_name, email, gender, country) values (6, 'Natal', 'Lardnar', 'nlardnar5@businesswire.com', 'Male', 'Brazil');
+insert into MOCK_DATA (id, first_name, last_name, email, gender, country) values (7, 'Ailina', 'Aspinell', 'aaspinell6@npr.org', 'Female', 'Russia');
+insert into MOCK_DATA (id, first_name, last_name, email, gender, country) values (8, 'Cordie', 'Cleugher', 'ccleugher7@statcounter.com', 'Male', 'Burundi');
+insert into MOCK_DATA (id, first_name, last_name, email, gender, country) values (9, 'Stacia', 'Everwin', 'severwin8@imageshack.us', 'Female', 'Indonesia');
+insert into MOCK_DATA (id, first_name, last_name, email, gender, country) values (10, 'Bobbee', 'Willetts', 'bwilletts9@stumbleupon.com', 'Female', 'Nigeria');
